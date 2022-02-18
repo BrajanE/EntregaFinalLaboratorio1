@@ -1,0 +1,21 @@
+/*
+ * Controller.h
+ *
+ *  Created on: 17 feb. 2022
+ *      Author: estra
+ */
+
+#ifndef CONTROLLER_H_
+#define CONTROLLER_H_
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+#include "LinkedList.h"
+#include "FunGeneral.h"
+#include "Articulos.h"
+#include "Parser.h"
+
+
+
+#endif /* CONTROLLER_H_ */

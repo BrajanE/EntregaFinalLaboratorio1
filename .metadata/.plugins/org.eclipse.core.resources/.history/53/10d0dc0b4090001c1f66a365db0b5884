@@ -1,0 +1,19 @@
+#ifndef ARTICULOS_H_
+#define ARTICULOS_H_
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+#include "LinkedList.h"
+#include "FunGeneral.h"
+
+typedef struct
+{
+	int id;
+	char articulo[50];
+	char medida[50];
+	float precio;
+	int rubroId;
+}eArticulo;
+
+#endif /* ARTICULOS_H_ */

@@ -1,0 +1,21 @@
+#include "Controller.h"
+
+
+int controller_loadFromText(char* path , LinkedList* ll_listaArticulos)
+{
+	int rtn = -1;
+
+	FILE* pFile;
+	if(ll_listaArticulos!=NULL && path!=NULL)
+	{
+		pFile = fopen(path, "r");
+			if(pFile!=NULL)
+			{
+				parser_articulosFromText(pFile ,ll_listaArticulos);
+			}
+			rtn=1;
+
+		fclose(pFile);
+	}
+    return rtn;
+}

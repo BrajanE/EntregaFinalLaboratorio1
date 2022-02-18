@@ -1,0 +1,46 @@
+/*
+ ============================================================================
+ Name        : Final.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+#include "LinkedList.h"
+#include "FunGeneral.h"
+#include "Articulos.h"
+#include "Parser.h"
+#include "Controller.h"
+int main(void) {
+	setbuf(stdout,NULL);
+
+	int opcion;
+	LinkedList* ll_listaArticulos=NULL;
+	ll_listaArticulos=ll_newLinkedList();
+
+	do{
+		MenuPrincipal();
+		opcion=PedirEntero("Ingrese opcion: ");
+		switch(opcion)
+		{
+		case 1:
+			controller_loadFromText("Datos.csv",ll_listaArticulos);
+			break;
+		case 2:
+			break;
+		case 3:
+			break;
+		case 4:
+			break;
+		case 5:
+			break;
+		}
+	}while (opcion<6);
+	return EXIT_SUCCESS;
+}

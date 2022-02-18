@@ -1,0 +1,22 @@
+#include "Parser.h"
+
+int parser_articulosFromText(FILE* pFile , LinkedList* ll_listaArticulos)
+{
+	int rtn=-1;
+	char idStr[100];
+	char articuloStr[100];
+	char medidaStr[100];
+	char precioStr[100];
+	char rubroIdStr[100];
+	eArticulo* pListaArticulos;
+	fscanf(pFile,"%[^,],%[^,],%[^,],%[^,],%[^\n]\n",idStr,articuloStr,medidaStr,precioStr,rubroIdStr);
+	while(!feof(pFile))
+	{
+		fscanf(pFile,"%[^,],%[^,],%[^,],%[^,],%[^\n]\n",idStr,articuloStr,medidaStr,precioStr,rubroIdStr);
+		pListaArticulos = libro_newParametros(idStr,articuloStr,medidaStr,precioStr,rubroIdStr);
+		ll_add(ll_listaArticulos, pListaArticulos);
+		rtn=1;
+
+	}
+    return rtn;
+}

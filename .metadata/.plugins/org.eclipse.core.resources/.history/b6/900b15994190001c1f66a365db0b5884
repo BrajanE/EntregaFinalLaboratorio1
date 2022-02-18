@@ -1,0 +1,24 @@
+#include "Controller.h"
+
+
+int controller_loadFromText(char* path , LinkedList* ll_listaArticulos)
+{
+	int rtn = -1;
+	char libros[15]="Libro.csv";
+	char editoriales[15]="Editorial.csv";
+	//char ubicacionLibro[100]="C:\\Users\\estra\\Desktop\\Segundo Parcial\\Parcial-2\\src\\Libro.csv";
+	//char ubicacionEditorial[100]="C:\\Users\\estra\\Desktop\\Segundo Parcial\\Parcial-2\\src\\Editorial.csv";
+	FILE* pFile;
+	if(ll_listaArticulos!=NULL && path!=NULL)
+	{
+		pFile = fopen(libros, "r");
+			if(pFile!=NULL)
+			{
+				parser_LibrosFromText(pFile ,ll_listaArticulos);
+			}
+			rtn=1;
+
+		fclose(pFile);
+	}
+    return rtn;
+}
